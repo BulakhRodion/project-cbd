@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Header />
-    <About />
+    <about />
+    <featured-products />
+    <FAQ />
+    <testimonials />
   </div>
 </template>
 
@@ -9,12 +12,18 @@
 
 import Header from './components/Header.vue';
 import About from './components/About.vue'
+import FeaturedProducts from './components/FeaturedProducts.vue';
+import FAQ from './components/FAQ.vue';
+import Testimonials from './components/Testimonials.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    About
+    About,
+    FeaturedProducts,
+    FAQ,
+    Testimonials,
   }
 }
 </script>
@@ -30,6 +39,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  font-size: 100%;
+  background-color: #F7F8F3;
 }
 a {
   text-decoration: none;

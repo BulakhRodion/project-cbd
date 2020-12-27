@@ -1,5 +1,5 @@
 <template>
-    <section class="cbd-header">
+    <header class="cbd-header">
         <div class="cbd-header__container">
             <h1 class="cbd-header__title">Enhancing Life Excelling in Care</h1>
             <h2 class="cbd-header__subtitle">Choose Wisely. Choose CBD.</h2>
@@ -12,7 +12,7 @@
             <div class="cbd-header__product">CBD Potion health</div>
             <div class="cbd-header__scroll"></div>
         </div>
-    </section>
+    </header>
 </template>
 
 <script>
