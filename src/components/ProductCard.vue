@@ -14,7 +14,7 @@
       <h3 class="cbd-products__card-title">
         {{ cards.title }}
       </h3>
-      <img :src="cards.image" class="cbd-products__img" />
+      <img :src="require(`@/assets/${cards.image}`)" class="cbd-products__img" />
     </div>
     <div class="cbd-products__card-footer">
       <span class="cbd-products__price">{{ cards.price }}</span>
@@ -44,6 +44,9 @@ export default {
     flex-basis: 33%;
     max-width: 33% !important;
     margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &__card-main {
     width: 100%;
@@ -60,6 +63,7 @@ export default {
     text-transform: uppercase;
     color: #1c1c1b;
     font-weight: 400;
+    margin-bottom: 20px;
   }
   &__card-footer {
     width: 100%;

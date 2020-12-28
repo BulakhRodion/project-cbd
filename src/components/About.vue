@@ -1,5 +1,5 @@
 <template>
-  <section class="cbd-about">
+  <section class="cbd-about" id="about">
     <div class="cbd-about__container">
       <div class="cbd-about__logo-wrapper">
         <h1 class="cbd-about__title">We are what we are</h1>

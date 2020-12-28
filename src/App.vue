@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <navigation />
     <Header />
     <about />
     <featured-products />
     <FAQ />
     <testimonials />
+    <Footer />
   </div>
 </template>
 
@@ -15,6 +17,8 @@ import About from './components/About.vue'
 import FeaturedProducts from './components/FeaturedProducts.vue';
 import FAQ from './components/FAQ.vue';
 import Testimonials from './components/Testimonials.vue';
+import Footer from './components/Footer.vue';
+import Navigation from './components/Navigation.vue';
 
 export default {
   name: 'App',
@@ -24,6 +28,8 @@ export default {
     FeaturedProducts,
     FAQ,
     Testimonials,
+    Footer,
+    Navigation,
   }
 }
 </script>
@@ -43,6 +49,7 @@ export default {
 body {
   font-size: 100%;
   background-color: #F7F8F3;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;

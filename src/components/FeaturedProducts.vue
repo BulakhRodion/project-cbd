@@ -2,7 +2,7 @@
   <section class="cbd-products">
     <div class="cbd-products__container">
       <h1 class="cbd-products__title">CBD Featured Products</h1>
-      <v-carousel height="500px" hide-delimiters class="cbd-products__carousel">
+      <v-carousel height="600px" hide-delimiters class="cbd-products__carousel">
         <v-carousel-item
           v-for="i in 2"
           :key="i"
@@ -32,19 +32,19 @@ export default {
           id: 1,
           title: "CBD 500 mg Orange Flavor Tincture",
           price: "$49.99 USD",
-          image: "@/assets/fst-card.png",
+          image: "fst-card.png",
         },
         {
           id: 2,
           title: "Black ICE CBD Muscle Rub 200 mg",
           price: "$49.99 USD",
-          image: "@/assets/sec-card.png",
+          image: "sec-card.png",
         },
         {
           id: 3,
           title: "CBD+Curcumin Coffee 750 mg",
           price: "$79.99 USD",
-          image: "@/assets/thd-card.png",
+          image: "thd-card.png",
         },
       ],
     };
@@ -94,7 +94,7 @@ export default {
   box-shadow: none !important;
 }
 .v-carousel__item {
-  height: 400px !important;
+  height: 420px !important;
 }
 .v-window__prev > .v-btn > .v-btn__content {
   position: relative;
