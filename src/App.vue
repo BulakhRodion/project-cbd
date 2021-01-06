@@ -1,42 +1,45 @@
 <template>
-  <div id="app">
-    <navigation />
-    <Header />
-    <about />
-    <featured-products />
-    <FAQ />
-    <testimonials />
-    <Footer />
+  <div class="app">
+    
+    <the-preloader />
+    <the-navigation />
+    <the-header />
+    <the-about />
+    <the-featured-products />
+    <the-questions />
+    <the-testimonials />
+    <the-footer />
   </div>
 </template>
 
 <script>
-
-import Header from './components/Header.vue';
-import About from './components/About.vue'
-import FeaturedProducts from './components/FeaturedProducts.vue';
-import FAQ from './components/FAQ.vue';
-import Testimonials from './components/Testimonials.vue';
-import Footer from './components/Footer.vue';
-import Navigation from './components/Navigation.vue';
+import TheHeader from './components/sections/TheHeader.vue';
+import TheAbout from './components/sections/TheAbout.vue'
+import TheFeaturedProducts from './components/sections/TheFeaturedProducts.vue';
+import TheQuestions from './components/sections/TheQuestions.vue';
+import TheTestimonials from './components/sections/TheTestimonials.vue';
+import TheFooter from './components/sections/TheFooter.vue';
+import TheNavigation from './components/sections/TheNavigation.vue';
+import ThePreloader from './components/ThePreloader.vue';
 
 export default {
   name: 'App',
   components: {
-    Header,
-    About,
-    FeaturedProducts,
-    FAQ,
-    Testimonials,
-    Footer,
-    Navigation,
+    TheHeader,
+    TheAbout,
+    TheFeaturedProducts,
+    TheQuestions,
+    TheTestimonials,
+    TheFooter,
+    TheNavigation,
+    ThePreloader,
   }
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
-#app {
+.app {
   font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,7 +52,6 @@ export default {
 body {
   font-size: 100%;
   background-color: #F7F8F3;
-  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;

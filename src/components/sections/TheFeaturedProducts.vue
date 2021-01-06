@@ -1,5 +1,5 @@
 <template>
-  <section class="cbd-products">
+  <section class="cbd-products" id="products">
     <div class="cbd-products__container">
       <h1 class="cbd-products__title">CBD Featured Products</h1>
       <v-carousel height="600px" hide-delimiters class="cbd-products__carousel">
@@ -8,7 +8,7 @@
           :key="i"
           class="cbd-products__carousel-item"
         >
-          <product-card v-for="j in 3" :key="j" :cards="cards[j - 1]" />
+          <the-product-card v-for="item in cards" :key="item.id" :cards="cards[item.id]" />
         </v-carousel-item>
         <template v-slot:prev="{ on, attrs }">
           <v-btn v-bind="attrs" v-on="on"></v-btn>
@@ -22,29 +22,32 @@
 </template>
 
 <script>
-import ProductCard from "./ProductCard.vue";
+import TheProductCard from "../TheProductCard.vue";
 export default {
-  components: { ProductCard },
+  components: { TheProductCard },
   data() {
     return {
       cards: [
         {
-          id: 1,
+          id: 0,
           title: "CBD 500 mg Orange Flavor Tincture",
-          price: "$49.99 USD",
+          price: 49.99,
           image: "fst-card.png",
+          pcs: 1,
+        },
+        {
+          id: 1,
+          title: "Black ICE CBD Muscle Rub 200 mg",
+          price: 49.99,
+          image: "sec-card.png",
+          pcs: 1,
         },
         {
           id: 2,
-          title: "Black ICE CBD Muscle Rub 200 mg",
-          price: "$49.99 USD",
-          image: "sec-card.png",
-        },
-        {
-          id: 3,
           title: "CBD+Curcumin Coffee 750 mg",
-          price: "$79.99 USD",
+          price: 79.99,
           image: "thd-card.png",
+          pcs: 1,
         },
       ],
     };
@@ -54,7 +57,6 @@ export default {
 
 <style lang="scss">
 .cbd-products {
-  padding-bottom: 100px;
   &__container {
     display: flex;
     flex-direction: column;

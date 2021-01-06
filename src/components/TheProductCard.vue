@@ -14,18 +14,24 @@
       <h3 class="cbd-products__card-title">
         {{ cards.title }}
       </h3>
-      <img :src="require(`@/assets/${cards.image}`)" class="cbd-products__img" />
+      <div class="cbd-products__img-wrapper">
+        <img
+          :src="require(`@/assets/${cards.image}`)"
+          class="cbd-products__img"
+        />
+      </div>
     </div>
     <div class="cbd-products__card-footer">
-      <span class="cbd-products__price">{{ cards.price }}</span>
-      <a href="" class="cbd-products__btn">
+      <span class="cbd-products__price">${{ cards.price }} USD</span>
+      <button class="cbd-products__btn" @click="addProduct(cards)">
         <span class="cbd-products__btn-text">Shop</span>
-      </a>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   props: ["cards"],
   data() {
@@ -33,6 +39,12 @@ export default {
       rating: 5,
     };
   },
+  methods: {
+    ...mapActions("cartStore", ["addToCart"]),
+    addProduct(product) {
+     this.addToCart({...product})
+    }
+  }
 };
 </script>
 
@@ -53,7 +65,7 @@ export default {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     background-color: #ffffff;
     padding: 20px 40px;
@@ -64,6 +76,23 @@ export default {
     color: #1c1c1b;
     font-weight: 400;
     margin-bottom: 20px;
+  }
+  &__img-wrapper {
+    height: 150px;
+    max-width: 170px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 75%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
   }
   &__card-footer {
     width: 100%;

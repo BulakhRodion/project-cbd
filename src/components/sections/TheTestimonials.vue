@@ -8,7 +8,7 @@
           :key="i"
           class="cbd-testimonials__carousel-item"
         >
-        <review />
+        <the-review />
         </v-carousel-item>
         <template v-slot:prev="{ on, attrs }" class="cbd-testimonials__prev-wrapper">
           <v-btn v-bind="attrs" v-on="on" class="cbd-testimonials__prev" height="100px" width="100px"></v-btn>
@@ -22,15 +22,15 @@
 </template>
 
 <script>
-import Review from './Review.vue';
+import TheReview from '../TheReview.vue';
 export default {
-    components: { Review }
+    components: { TheReview }
 };
 </script>
 
 <style lang="scss">
 .cbd-testimonials {
-  background: url("../assets/testimonials-bg.png") center no-repeat;
+  background: url("../../assets/testimonials-bg.png") center no-repeat;
   background-size: cover;
   min-height: 80vh;
   position: relative; 

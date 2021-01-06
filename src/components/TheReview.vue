@@ -62,7 +62,7 @@ export default {
       position: absolute;
       width: 45px;
       height: 2px;
-      background-color: #F7F8F3;
+      background-color: #f7f8f3;
       top: 50%;
       left: -60px;
     }

@@ -1,5 +1,5 @@
 <template>
-  <section class="cbd-faq">
+  <section class="cbd-faq" id="faq">
     <div class="cbd-faq__container">
       <h1 class="cbd-faq__title">Frequently asked questions</h1>
       <v-expansion-panels accordion class="cbd-faq__accordion">

@@ -1,29 +1,33 @@
 <template>
-  <header class="cbd-header">
+  <header class="cbd-header" id="home">
     <div class="cbd-header__container">
       <h1 class="cbd-header__title">Enhancing Life Excelling in Care</h1>
       <h2 class="cbd-header__subtitle">Choose Wisely. Choose CBD.</h2>
       <div class="cbd-header__links-wrapper">
         <div class="cbd-header__shopping-wrapper">
-          <a href="" class="cbd-header__shopping-link">Start Shopping</a>
+          <a
+            href=""
+            class="cbd-header__shopping-link"
+            v-scroll-to="{ el: '#products', offset: -80 }"
+            >Start Shopping</a
+          >
         </div>
         <a href="#about" class="cbd-header__products-link">See all products</a>
       </div>
       <div class="cbd-header__product">CBD Potion health</div>
-      <div class="cbd-header__scroll"></div>
+      <div class="cbd-header__scroll" v-scroll-to="{ el: '#about' }"></div>
     </div>
   </header>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss">
 .cbd-header {
   min-height: 100vh;
-  background: url("../assets/first-screen-bg.png") center no-repeat;
+  background: url("../../assets/first-screen-bg.png") center no-repeat;
   background-size: cover;
   padding: 120px 0 100px;
   display: flex;

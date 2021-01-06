@@ -12,7 +12,7 @@
 
       <v-tabs-items v-model="tab" style="width: 100%;">
         <v-tab-item v-for="item in items" :key="item">
-          <tab-inner />
+          <the-tab-inner />
         </v-tab-item>
       </v-tabs-items>
     </div>
@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import TabInner from './TabInner.vue';
+import TheTabInner from '../TheTabInner.vue';
 export default {
-  components: { TabInner },
+  components: { TheTabInner },
   data() {
     return {
       tab: null,
