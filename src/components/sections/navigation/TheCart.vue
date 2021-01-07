@@ -62,10 +62,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions("cartStore", ["removeItem"]),
+    ...mapActions("cartStore", ["REMOVE_ITEM"]),
     removeProduct(index) {
       setTimeout(() => {
-        this.removeItem(index);
+        this.REMOVE_ITEM(index);
       }, 600);
     },
     showRemoving() {

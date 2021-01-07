@@ -1,6 +1,6 @@
 <template>
   <header class="cbd-header" id="home">
-    <div class="cbd-header__container">
+    <div class="cbd-header__container container">
       <h1 class="cbd-header__title">Enhancing Life Excelling in Care</h1>
       <h2 class="cbd-header__subtitle">Choose Wisely. Choose CBD.</h2>
       <div class="cbd-header__links-wrapper">
@@ -27,24 +27,19 @@ export default {};
 <style lang="scss">
 .cbd-header {
   min-height: 100vh;
-  background: url("../../assets/first-screen-bg.png") center no-repeat;
+  background: url("../../../assets/first-screen-bg.png") center no-repeat;
   background-size: cover;
   padding: 120px 0 100px;
   display: flex;
   &__container {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 15px;
-    margin: 0 auto;
   }
   &__title {
-    font-size: 55px;
+    font-size: $H550;
     font-weight: 400;
-    color: #f7f8f3;
+    color: $semiwhite-color;
     max-width: 558px;
     text-transform: uppercase;
     text-align: right;
@@ -52,9 +47,9 @@ export default {};
     margin-bottom: 38px;
   }
   &__subtitle {
-    font-size: 24px;
+    font-size: $H240;
     font-weight: 300;
-    color: #f7f8f3;
+    color: $semiwhite-color;
     text-align: right;
     letter-spacing: 4px;
     margin-bottom: 60px;
@@ -67,38 +62,36 @@ export default {};
   &__shopping-wrapper {
     height: 60px;
     width: 230px;
-    border: 1px solid #f7f8f3;
+    border: 1px solid $semiwhite-color;
     margin-bottom: 20px;
   }
   &__shopping-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     height: 100%;
-    font-size: 20px;
-    font-weight: 400;
-    color: #ffffff;
+    font-size: $H200;
+    color: $white-color;
     text-transform: uppercase;
     padding-right: 50px;
     position: relative;
     transition: background-color 0.4s ease;
     &:hover {
-      background-color: rgba(#ffffff, 0.4);
+      background-color: rgba($white-color, 0.4);
     }
     &::after {
       content: "";
       width: 45px;
       height: 2px;
       position: absolute;
-      background-color: #ffffff;
+      background-color: $white-color;
       left: 164px;
     }
   }
   &__products-link {
-    font-size: 18px;
+    font-size: $H180;
     font-weight: 300;
-    color: #f7f8f3;
+    color: $semiwhite-color;
     letter-spacing: 4px;
     position: relative;
     transition: transform 0.4s ease;
@@ -110,7 +103,7 @@ export default {};
       width: 14px;
       height: 1px;
       position: absolute;
-      background-color: #ffffff;
+      background-color: $white-color;
       top: 50%;
       left: 180px;
     }
@@ -119,8 +112,8 @@ export default {};
       width: 5px;
       height: 5px;
       position: absolute;
-      border-right: 1px solid #ffffff;
-      border-bottom: 1px solid #ffffff;
+      border-right: 1px solid $white-color;
+      border-bottom: 1px solid $white-color;
       top: 11px;
       left: 188px;
       transform: rotate(-45deg);
@@ -142,9 +135,8 @@ export default {};
     }
   }
   &__product {
-    font-size: 26px;
-    font-weight: 400;
-    color: #ffffff;
+    font-size: $H260;
+    color: $white-color;
     position: absolute;
     text-transform: uppercase;
     bottom: 160px;
@@ -155,7 +147,7 @@ export default {};
       width: 50px;
       height: 2px;
       position: absolute;
-      background-color: #ffffff;
+      background-color: $white-color;
       top: 50%;
       transform: translate(-50%);
       left: -55px;

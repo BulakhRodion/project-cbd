@@ -1,5 +1,5 @@
 <template>
-  <nav class="cbd-nav">
+  <nav class="cbd-nav" :class="{ change_color: scrollPosition >= 100 }">
     <ul class="cbd-nav__list">
       <li v-for="item in sections" :key="item.id" class="cbd-nav__list-anchor">
         <a
@@ -30,12 +30,11 @@
 </template>
 
 <script>
-import TheCart from "../TheCart.vue";
+import TheCart from "./TheCart.vue";
 export default {
   components: { TheCart },
   data() {
     return {
-      anchors: ["#home", "#products", "#faq", "#contacts"],
       sections: [
         { id: 0, section: "HOME", anchor: "#home", isActive: true },
         { id: 1, section: "Products", anchor: "#products", isActive: false },
@@ -43,15 +42,22 @@ export default {
         { id: 3, section: "Contact Us", anchor: "#contacts", isActive: false },
       ],
       buttons: ["Login", "Search"],
+      scrollPosition: null,
     };
   },
   methods: {
     atSection: function (id) {
-      this.sections.map(function(nav) {
-        return nav.isActive = false;
-      })
+      this.sections.map(function (nav) {
+        return (nav.isActive = false);
+      });
       this.sections[id].isActive = !this.sections[id].isActive;
     },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
   },
 };
 </script>
@@ -67,49 +73,41 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.4);
-  background-color: rgba(#1c1c1c, 0.3);
+  border-bottom: 1px solid rgba($color: $white-color, $alpha: 0.4);
+  background-color: rgba($white-color, 0.3);
   &__list {
     display: flex;
-    height: 100%;
-    width: 100%;
     max-width: 314px;
-    list-style: none;
     padding-left: 10px;
-    width: 20%;
-    justify-content: space-around;
     &--btns {
       padding-left: 0;
-      width: fit-content;
       height: 100%;
       justify-content: center;
       align-items: center;
     }
   }
   &__list-anchor {
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 400;
+    font-size: $H160;
+    color: $white-color;
     text-transform: uppercase;
     transition: color 0.4s ease;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 8px;
+    margin-right: 8px;
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
     }
     &:hover {
-      color: rgba(#ffffff, 0.4);
+      color: rgba($white-color, 0.4);
     }
   }
   &__title {
-    font-size: 30px;
-    color: #ffffff;
-    font-weight: 400;
+    font-size: $H300;
+    color: $white-color;
     text-transform: uppercase;
-    padding-right: 10px;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   &__list-btns-item {
     height: 100%;
@@ -118,17 +116,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 400;
+    font-size: $H160;
+    color: $white-color;
     text-transform: uppercase;
-    border-left: 1px solid rgba($color: #ffffff, $alpha: 0.4);
+    border-left: 1px solid rgba($color: $white-color, $alpha: 0.4);
     outline: none;
     height: 100%;
     padding: 30px 20px;
     transition: background-color 0.4s ease;
     &:hover {
-      background-color: rgba(#ffffff, 0.4);
+      background-color: rgba($white-color, 0.4);
     }
   }
   &__list-btn-icon {
@@ -137,52 +134,48 @@ export default {
   &__cart-header {
     display: flex;
     align-items: center;
-    background-color: #6e774a;
+    background-color: $main-color;
     height: 60px;
     padding: 8px 28px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: $H180;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   &__cart-main {
     display: flex;
     flex-direction: column;
-    justify-items: center;
     min-height: 60px;
     padding: 8px 28px;
   }
   &__cart-title {
-    color: #000000;
+    color: $black-color;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: $H140;
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 10px;
   }
   &__purchases-list {
-    list-style: none;
     display: flex;
     flex-direction: column;
   }
   &__purchases-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     &:last-child {
       margin-bottom: 0;
     }
   }
   &__purchases-item-name,
-  &__purchases-item-price,
-  &__purchases-item-peaces {
+  &__purchases-item-price {
     margin-right: 8px;
   }
   &__purchases-remove {
-    color: #000000;
+    color: $black-color;
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: $H140;
     letter-spacing: 1.4px;
     outline: none;
     transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -190,12 +183,12 @@ export default {
     height: 30px;
     border-radius: 4px;
     &:hover {
-      background-color: rgba(#000000, 0.1);
+      background-color: rgba($black-color, 0.1);
     }
   }
   .active {
     text-decoration: line-through;
-    color: rgba($color: #FFFFFF, $alpha: 0.7);
+    color: rgba($color: $white-color, $alpha: 0.7);
   }
   .remove {
     animation: remove 0.6s linear;
@@ -204,12 +197,15 @@ export default {
     }
   }
   @keyframes remove {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+    0% {
+      opacity: 1;
     }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+.change_color {
+  background-color: rgba($dark-color, 0.3);
 }
 </style>

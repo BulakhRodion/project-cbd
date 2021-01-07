@@ -1,6 +1,6 @@
 <template>
   <footer class="cbd-footer" id="contacts">
-    <div class="cbd-footer__container">
+    <div class="cbd-footer__container container">
       <h1 class="cbd-footer__title">CBD</h1>
       <div class="cbd-footer__col-wrapper">
         <ul class="cbd-footer__list">
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import TheIcons from "../icons/TheIcons.vue";
+import TheIcons from "../../icons/TheIcons.vue";
 export default {
   components: { TheIcons },
   data() {
@@ -76,17 +76,12 @@ export default {
 .cbd-footer {
   padding: 100px 0 20px;
   &__container {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 15px;
-    margin: auto;
   }
   &__title {
-    font-size: 60px;
-    color: #6e774a;
+    font-size: $H600;
+    color: $main-color;
     font-weight: 400;
     margin-bottom: 60px;
     position: relative;
@@ -96,7 +91,7 @@ export default {
       display: block;
       height: 2px;
       width: 370px;
-      background-color: #6e774a;
+      background-color: $main-color;
       position: absolute;
       top: 51%;
     }
@@ -122,9 +117,8 @@ export default {
     }
   }
   &__list-item {
-    font-size: 14px;
-    color: #6e774a;
-    font-weight: 400;
+    font-size: $H140;
+    color: $main-color;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -142,13 +136,13 @@ export default {
     }
   }
   &__list-icon {
-    fill: #6e774a;
+    fill: $main-color;
     width: 20px;
     height: 20px;
   }
   &__subtitle {
-    font-size: 18px;
-    color: #1c1c1c;
+    font-size: $H180;
+    color: $dark-color;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -159,7 +153,7 @@ export default {
       display: block;
       height: 2px;
       width: 54px;
-      background-color: #6e774a;
+      background-color: $main-color;
       position: absolute;
       bottom: 70px;
       left: 36%;
@@ -173,17 +167,17 @@ export default {
   &__input {
     width: 220px;
     height: 50px;
-    border: 2px solid #ced6af;
+    border: 2px solid $muddy-border-color;
     border-right: 2px solid transparent;
     outline: none;
     padding: 10px;
-    color: #6e774a;
-    font-size: 16px;
+    color: $main-color;
+    font-size: $H160;
   }
   &__btn {
     height: 50px;
     width: 80px;
-    border: 2px solid #ced6af;
+    border: 2px solid $muddy-border-color;
     outline: none;
     position: relative;
     &::before {
@@ -192,7 +186,7 @@ export default {
       width: 30px;
       height: 1px;
       position: absolute;
-      background-color: #6e774a;
+      background-color: $main-color;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -203,16 +197,16 @@ export default {
       width: 10px;
       height: 10px;
       position: absolute;
-      border-top: 1px solid #6e774a;
-      border-right: 1px solid #6e774a;
+      border-top: 1px solid $main-color;
+      border-right: 1px solid $main-color;
       top: 40.2%;
       left: 56.4%;
       transform: rotate(45deg);
     }
   }
   &__copyright {
-    color: #6e774a;
-    font-size: 11px;
+    color: $main-color;
+    font-size: $H110;
     text-transform: uppercase;
     letter-spacing: 2px;
   }

@@ -2,7 +2,7 @@ const state = () => ({
   cart: [],
 });
 const mutations = {
-  changeCart: (state, payload) => {
+  CHANGE_CART: (state, payload) => {
     if (state.cart.length) {
       let isAdded = false;
       state.cart.map(function(item) {
@@ -18,16 +18,16 @@ const mutations = {
       state.cart = [...state.cart, payload];
     }
   },
-  removeFromCart: (state, index) => {
+  REMOVE_FROM_CART: (state, index) => {
     state.cart.splice(index, 1);
   },
 };
 const actions = {
-  addToCart: async ({ commit }, payload) => {
-    commit("changeCart", payload);
+  ADD_TO_CART: async ({ commit }, payload) => {
+    commit("CHANGE_CART", payload);
   },
-  removeItem: async ({ commit }, index) => {
-    commit("removeFromCart", index);
+  REMOVE_ITEM: async ({ commit }, index) => {
+    commit("REMOVE_FROM_CART", index);
   },
 };
 export default {

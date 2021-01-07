@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "preloader",
+  name: "the-preloader",
   data() {
     return {
       show: true,
@@ -39,7 +39,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #F7F8F3;
+    background-color: $semiwhite-color;
     z-index: 999;
   }
   &__circles {
@@ -47,7 +47,7 @@ export default {
     vertical-align: middle;
     position: relative;
     display: flex;
-    background: #F7F8F3;
+    background: $semiwhite-color;
   }
   &__circle {
     display: block;
