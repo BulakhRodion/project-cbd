@@ -7,7 +7,6 @@
         color="#6E774A"
         dense
         hover
-        size="30"
         updateInput
         class="cbd-products__rating"
       />

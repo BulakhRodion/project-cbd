@@ -85,6 +85,9 @@ export default {
     font-weight: 400;
     margin-bottom: 60px;
     position: relative;
+    @media screen and (max-width: 700px) {
+      font-size: $H400;
+    }
     &::before,
     &::after {
       content: "";
@@ -94,12 +97,24 @@ export default {
       background-color: $main-color;
       position: absolute;
       top: 51%;
+      @media screen and (max-width: 1100px) {
+        width: 270px;
+      }
+      @media screen and (max-width: 810px) {
+        width: 180px;
+      }
     }
     &::before {
       right: 170px;
+      @media screen and (max-width: 700px) {
+        right: 120px;
+      }
     }
     &::after {
       left: 170px;
+      @media screen and (max-width: 700px) {
+        left: 120px;
+      }
     }
   }
   &__col-wrapper {
@@ -124,9 +139,15 @@ export default {
     margin-bottom: 10px;
     text-align: center;
     transition: transform 0.4s ease;
+    @media screen and (max-width: 700px) {
+      font-size: $H110;
+    }
     &--icons {
       margin-bottom: 0;
       margin-right: 60px;
+      @media screen and (max-width: 700px) {
+        margin-right: 20px;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -139,6 +160,10 @@ export default {
     fill: $main-color;
     width: 20px;
     height: 20px;
+    @media screen and (max-width: 700px) {
+      width: 14px;
+      height: 14px;
+    }
   }
   &__subtitle {
     font-size: $H180;
@@ -148,6 +173,9 @@ export default {
     letter-spacing: 2px;
     margin-bottom: 10px;
     position: relative;
+    @media screen and (max-width: 700px) {
+      font-size: $H140;
+    }
     &::before {
       content: "";
       display: block;

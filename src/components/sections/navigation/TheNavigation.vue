@@ -92,6 +92,9 @@ export default {
     text-transform: uppercase;
     transition: color 0.4s ease;
     margin-right: 8px;
+    @media screen and (max-width: 800px) {
+      font-size: $H110;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -108,6 +111,9 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 800px) {
+      font-size: $H200;
+    }
   }
   &__list-btns-item {
     height: 100%;
@@ -124,6 +130,9 @@ export default {
     height: 100%;
     padding: 30px 20px;
     transition: background-color 0.4s ease;
+    @media screen and (max-width: 800px) {
+      font-size: $H110;
+    }
     &:hover {
       background-color: rgba($white-color, 0.4);
     }

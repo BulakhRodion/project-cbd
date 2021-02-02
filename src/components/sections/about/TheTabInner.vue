@@ -16,7 +16,7 @@
         endocannabinoid system.
       </p>
     </div>
-    <div class="cbd-about__col">
+    <div class="cbd-about__col cbd-about__col--images">
       <div class="cbd-about__img-wrapper">
         <img src="@/assets/a-fst-img.png" alt="firstimg" />
       </div>

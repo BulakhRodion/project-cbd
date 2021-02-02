@@ -45,6 +45,13 @@ export default {};
     text-align: right;
     letter-spacing: 8px;
     margin-bottom: 38px;
+    @media screen and (max-width: 800px) {
+      font-size: $H400;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: $H220;
+      max-width: 400px;
+    }
   }
   &__subtitle {
     font-size: $H240;
@@ -53,6 +60,9 @@ export default {};
     text-align: right;
     letter-spacing: 4px;
     margin-bottom: 60px;
+    @media screen and (max-width: 500px) {
+      font-size: $H160;
+    }
   }
   &__links-wrapper {
     display: flex;
@@ -76,6 +86,9 @@ export default {};
     padding-right: 50px;
     position: relative;
     transition: background-color 0.4s ease;
+    @media screen and (max-width: 500px) {
+      font-size: $H140;
+    }
     &:hover {
       background-color: rgba($white-color, 0.4);
     }
@@ -142,6 +155,9 @@ export default {};
     bottom: 160px;
     left: 20px;
     transform: rotate(-90deg);
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
     &::before {
       content: "";
       width: 50px;

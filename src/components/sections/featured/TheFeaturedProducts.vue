@@ -91,6 +91,10 @@ export default {
     flex-direction: column;
     background-color: $white-color;
     padding: 20px 40px;
+    overflow: hidden;
+    @media screen and (max-width: 860px) {
+      padding: 10px 20px;
+    }
   }
   &__card-title {
     font-size: $H180;
@@ -98,6 +102,11 @@ export default {
     color: $dark-color;
     font-weight: 400;
     margin-bottom: 20px;
+    @media screen and (max-width: 1300px) {
+      font-size: $H140;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
   &__img-wrapper {
     height: 150px;
@@ -128,6 +137,9 @@ export default {
   &__price {
     color: $dark-color;
     font-size: $H180;
+    @media screen and (max-width: 800px) {
+      font-size: $H110;
+    }
   }
   &__btn {
     display: flex;
@@ -147,6 +159,9 @@ export default {
     text-transform: uppercase;
     font-size: $H180;
     position: relative;
+    @media screen and (max-width: 800px) {
+      font-size: $H110;
+    }
     &:after {
       content: "";
       display: block;
